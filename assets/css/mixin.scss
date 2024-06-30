@@ -1,0 +1,38 @@
+@mixin display-flex($flex-direction, $justify-content, $aling-itens){
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $justify-content;
+    flex-direction: $flex-direction;
+    align-items: $aling-itens;
+}
+@mixin center($width){
+    width: $width;
+    margin: 0px auto;
+}
+@mixin heading($color){
+    color: $color;
+    font-size: 24px;
+}
+@mixin main-heading($color){
+    font-size: 50px;
+    letter-spacing: 2px;
+    color:$color;
+}
+@mixin right-border{
+    position: absolute;
+    content: '';
+     bottom: -15px;
+     left: -15px;
+     width: 30%;
+     height: 40%;
+    border-bottom: 3px solid $main-blue;
+}
+@mixin left-border{
+    position: absolute;
+    content: '';
+    top: -15px;
+    right: -15px;
+    width: 30%;
+    height: 40%;
+    border-top: 3px solid $main-blue;
+}

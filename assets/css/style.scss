@@ -1,0 +1,359 @@
+//variables
+@import "var.scss";
+//mixin
+@import "mixin.scss";
+//
+* {
+  margin: 0px;
+  padding: 0px;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: $light-blue;
+}
+img {
+  width: 100%;
+}
+ul {
+  list-style: none;
+  li {
+    display: inline;
+    a {
+      text-decoration: none;
+    }
+  }
+}
+header {
+  width: 50%;
+  @include display-flex(row, flex-start, center);
+  margin-left: 50px;
+  position: absolute;
+  z-index: 30;
+  #logo {
+    width: 15%;
+  }
+  nav {
+    margin-left: 20px;
+    ul li {
+      padding-left: 7px;
+      font-size: 16px;
+      a {
+        color: $main-blue;
+        font-weight: bold;
+        transition: 400ms all;
+      }
+      a:hover {
+        border-bottom: 1px solid $light-details;
+        transition: 400ms all;
+      }
+    }
+  }
+}
+footer{
+    margin-top: 20px;
+    background-color: $dark-blue;
+    .container{
+        @include center(90%);
+        @include display-flex(row, space-around, center);
+        color: $light-blue;
+        padding: 20px 0px;
+        a{
+            color: $light-blue;
+            padding-left: 5px;
+            font-weight: light;
+        }
+    }
+}
+//ids
+#header-background {
+  height: 40vh;
+  width: 100%;
+  background-image: url("../images/header-background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top:0;
+}
+#hero-background{
+    height: 80vh;
+    width: 100%;
+    background-image: url("../images/background.jpg");
+    margin: 50px 0px;
+    background-position: top;
+}
+
+#about {
+  @include center(80%);
+  //margin-top: -150px;
+  text-align: center;
+  h2:first-child {
+    margin-bottom: 40px;
+    @include main-heading($main-blue);
+    span {
+      color: $dark-blue;
+    }
+  }
+  p {
+    color: $dark-blue;
+    font-size: 20px;
+    font-weight: bolder;
+  }
+  .container {
+    margin-top: 40px;
+    @include display-flex(row, space-around, center);
+    .column {
+      width: 30%;
+    }
+    .columnn:first-child img {
+      opacity: 0.7;
+    }
+    .column:nth-child(2) {
+      text-align: center;
+      figure {
+        width: 60%;
+        position: relative;
+        margin: 0px auto;
+        &::before {
+          @include left-border();
+        }
+        &::after {
+          @include right-border();
+        }
+        img {
+          display: block;
+        }
+      }
+    }
+    .column:nth-child(3) {
+      p {
+        @include heading($background-dark);
+        margin-bottom: 7px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+#skills {
+  @include center(80%);
+  margin-top: 50px;
+  text-align: center;
+  h2:first-child {
+    margin-bottom: 40px;
+    @include main-heading($main-blue);
+    span {
+      color: $dark-blue;
+    }
+  }
+  p {
+    color: $dark-blue;
+    font-size: 18px;
+  }
+  .container {
+    margin-top: 50px;
+    @include display-flex(row, space-around, center);
+    .column {
+      width: 20%;
+      text-align: left;
+      border-left: 4px solid $main-blue;
+      padding-left: 12.5px;
+      ul li {
+        margin-top: 5px;
+        @include display-flex(row, flex-start, center);
+        color: $dark-blue;
+        font-size: 18px;
+        margin-left: 10px;
+      }
+      ul li:first-child {
+        margin-top: 20px;
+      }
+      h3 {
+        color: $main-blue;
+        font-size: 26px;
+        position: relative;
+        margin-top: 5px;
+        &::before {
+          content: "";
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background-color: $light-details;
+          position: absolute;
+          left: -25px;
+          top: calc(50% - 10px);
+        }
+      }
+    }
+  }
+}
+#projects {
+  @include center(80%);
+  margin-top: 50px;
+  text-align: center;
+  h2:first-child {
+    margin-bottom: 40px;
+    @include main-heading($main-blue);
+    span {
+      color: $dark-blue;
+    }
+  }
+  p {
+    color: $dark-blue;
+    font-size: 18px;
+  }
+  .container {
+    margin-top: 40px;
+    @include display-flex(row, space-around, center);
+    .column {
+      width: 30%;
+      figure img {
+        transition: 0.4s all;
+        box-shadow: 0px 0px 15px 0px #707070;
+      }
+      figure img:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+      }
+      figure figcaption {
+        font-size: 18px;
+        color: $main-blue;
+        font-weight: bolder;
+        margin-top: 5px;
+      }
+    }
+  }
+}
+#testimonials {
+  @include center(80%);
+  margin-top: 50px;
+  text-align: center;
+  h2:first-child {
+    margin-bottom: 40px;
+    @include main-heading($main-blue);
+    span {
+      color: $dark-blue;
+    }
+  }
+  p {
+    color: $dark-blue;
+    font-size: 18px;
+  }
+  .container {
+    margin-top: 40px;
+    @include display-flex(row, space-around, center);
+    //background-color: $main-blue;
+    .column {
+      width: 22%;
+      margin-top: 100px;
+      padding: 50px 10px;
+      background-color: rgba($color: $light-details, $alpha: 0.5);
+      position: relative;
+      img {
+        width: 50%;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+      }
+      figcaption {
+        margin: 20px 0px;
+        font-size: 22px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+#contact {
+  @include center(80%);
+  margin-top: 50px;
+  text-align: center;
+  h2:first-child {
+    margin-bottom: 40px;
+    @include main-heading($main-blue);
+    span {
+      color: $dark-blue;
+    }
+  }
+  .container {
+    @include display-flex(row, space-around, center);
+  }
+  .container:first-child {
+    margin-top: 50px;
+    .column {
+      width: 32%;
+      .tb-form {
+        width: 100%;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid $dark-blue;
+        font-size: 20px;
+        padding-bottom: 5px;
+      }
+    }
+  }
+  .container:nth-child(2) {
+    #tb-message {
+      width: 99%;
+      margin-top: 20px;
+      background-color: transparent;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid $dark-blue;
+      font-size: 20px;
+      padding-bottom: 5px;
+    }
+  }
+  .container:nth-child(3) {
+    .btn {
+      width: 30%;
+      margin-top: 20px;
+      background-color: transparent;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid $dark-blue;
+      font-size: 20px;
+      padding-bottom: 5px;
+    }
+  }
+  .container-contact {
+    margin-top: 50px;
+    @include display-flex(row, space-around, center);
+    .column {
+      width: 20%;
+      text-align: left;
+      border-left: 4px solid $main-blue;
+      padding-left: 12.5px;
+      ul li {
+        margin-top: 5px;
+        @include display-flex(row, flex-start, center);
+        font-size: 18px;
+        margin-left: 10px;
+      }
+      ul li:first-child {
+        margin-top: 20px;
+      }
+      a {
+        color: $dark-blue;
+      }
+      h3 {
+        color: $main-blue;
+        font-size: 26px;
+        position: relative;
+        margin-top: 5px;
+        &::before {
+          content: "";
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background-color: $light-details;
+          position: absolute;
+          left: -25px;
+          top: calc(50% - 10px);
+        }
+      }
+    }
+  }
+}
